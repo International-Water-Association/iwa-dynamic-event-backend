@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "back_ground_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sub_heading": {
+      "type": "text"
+    },
+    "date_Location": {
+      "type": "text"
+    },
+    "cta_text": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "component.button",
+      "repeatable": true
+    },
+    "intro_text": {
+      "type": "text"
+    },
+    "image_text_block": {
+      "type": "dynamiczone",
+      "components": [
+        "component.image-text-block"
+      ]
+    },
+    "featured_cards": {
+      "type": "dynamiczone",
+      "components": [
+        "component.cards"
+      ]
+    },
+    "why_attend_split": {
+      "type": "dynamiczone",
+      "components": [
+        "component.why-attend-cards"
+      ]
+    },
+    "featured_sessions": {
+      "type": "dynamiczone",
+      "components": [
+        "component.sessions"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_speakers",
+  "info": {
+    "displayName": "speakers"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

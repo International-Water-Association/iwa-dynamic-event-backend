@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_component_program_details",
+  "info": {
+    "displayName": "program_details"
+  },
+  "options": {},
+  "attributes": {
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "title": {
+      "type": "text"
+    },
+    "speaker_list": {
+      "type": "text"
+    },
+   "topics": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Registration & Networking Breakfast",
+        "Keynote",
+        "Panel",
+        "Break",
+        "Lunch",
+        "Reception"
+      ]
+    }
+  },
+  "config": {}
+}
