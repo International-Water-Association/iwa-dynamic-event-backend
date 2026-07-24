@@ -29,6 +29,9 @@
       "components": [
         "component.program-details"
       ]
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

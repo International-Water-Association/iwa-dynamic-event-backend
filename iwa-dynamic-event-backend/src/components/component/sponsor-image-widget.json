@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_sponsor_image_widgets",
+  "info": {
+    "displayName": "Sponsor Image Widget"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

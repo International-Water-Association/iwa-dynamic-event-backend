@@ -75,6 +75,11 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "sponsor_image_widget": {
+      "type": "component",
+      "component": "component.sponsor-image-widget",
+      "repeatable": true
     }
   }
 }

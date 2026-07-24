@@ -101,6 +101,20 @@ export interface ComponentSpeakers extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentSponsorImageWidget extends Struct.ComponentSchema {
+  collectionName: 'components_component_sponsor_image_widgets';
+  info: {
+    displayName: 'Sponsor Image Widget';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface ComponentWhyAttendCards extends Struct.ComponentSchema {
   collectionName: 'components_component_why_attend_cards';
   info: {
@@ -133,6 +147,7 @@ declare module '@strapi/strapi' {
       'component.program-details': ComponentProgramDetails;
       'component.sessions': ComponentSessions;
       'component.speakers': ComponentSpeakers;
+      'component.sponsor-image-widget': ComponentSponsorImageWidget;
       'component.why-attend-cards': ComponentWhyAttendCards;
     }
   }
