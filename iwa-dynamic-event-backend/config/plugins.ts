@@ -27,9 +27,10 @@ export default ({ env }) => ({
       defaultLimit: 100,
       maxLimit: 250,
       apolloServer: {
-        csrfPrevention: false,
-        cacheControl: { defaultMaxAge: 300 },
-      },
+  introspection: true,
+  csrfPrevention: false,
+  cacheControl: { defaultMaxAge: 300 },
+},
     },
   },
   ckeditor5: {
