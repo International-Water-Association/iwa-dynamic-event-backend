@@ -33,7 +33,7 @@ export default [
       'https://iwa-network.org',
       'http://iwa-network.org',
       'http://www.iwa-network.org',
-      "https://www.iwautilities.org"
+      "https://www.iwautilities.org",
       'https://utility-summit-2924fc9f4c35.herokuapp.com'
     ],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
