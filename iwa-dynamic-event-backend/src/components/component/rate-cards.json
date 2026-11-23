@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_rate_cards",
+  "info": {
+    "displayName": "rateCards"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "customdate": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "component.rates",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

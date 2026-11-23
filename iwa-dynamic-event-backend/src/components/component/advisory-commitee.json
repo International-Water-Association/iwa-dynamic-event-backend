@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_advisory_commitees",
+  "info": {
+    "displayName": "AdvisoryCommitee"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "member_Details": {
+      "type": "component",
+      "component": "component.member",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
