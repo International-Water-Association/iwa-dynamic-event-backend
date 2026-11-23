@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "registrations",
+  "info": {
+    "singularName": "registration",
+    "pluralName": "registrations",
+    "displayName": "Registration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "ratecard": {
+      "type": "dynamiczone",
+      "components": [
+        "component.rate-cards"
+      ]
+    },
+    "btn_text": {
+      "type": "string"
+    },
+    "btn_link": {
+      "type": "text"
+    }
+  }
+}

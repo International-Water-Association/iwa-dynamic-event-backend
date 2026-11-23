@@ -41,7 +41,16 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "Title"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

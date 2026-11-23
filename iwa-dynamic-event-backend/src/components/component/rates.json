@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_rates",
+  "info": {
+    "displayName": "rates"
+  },
+  "options": {},
+  "attributes": {
+    "typeOfMembership": {
+      "type": "text"
+    },
+    "rate": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

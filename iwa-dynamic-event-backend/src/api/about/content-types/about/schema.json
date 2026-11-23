@@ -23,6 +23,22 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "imageTextBlock": {
+      "type": "dynamiczone",
+      "components": [
+        "component.image-text"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "btn_text": {
+      "type": "string"
+    },
+    "btn_link": {
+      "type": "text"
     }
   }
 }

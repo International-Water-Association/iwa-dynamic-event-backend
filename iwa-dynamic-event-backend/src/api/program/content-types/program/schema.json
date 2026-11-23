@@ -32,6 +32,27 @@
     },
     "date": {
       "type": "date"
+    },
+    "mainSubTitle": {
+      "type": "string"
+    },
+    "mainTitle": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Points": {
+      "type": "richtext"
+    },
+    "committee": {
+      "type": "component",
+      "component": "component.advisory-commitee",
+      "repeatable": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

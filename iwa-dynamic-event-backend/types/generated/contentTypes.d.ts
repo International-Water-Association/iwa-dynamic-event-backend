@@ -441,6 +441,8 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    btn_link: Schema.Attribute.Text;
+    btn_text: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -451,10 +453,12 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    imageTextBlock: Schema.Attribute.DynamicZone<['component.image-text']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     subTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -568,11 +572,13 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    committee: Schema.Attribute.Component<'component.advisory-commitee', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     day: Schema.Attribute.Enumeration<['Day 1', 'Day2']>;
+    Description: Schema.Attribute.Text;
     details: Schema.Attribute.DynamicZone<['component.program-details']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -580,9 +586,47 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
       'api::program.program'
     > &
       Schema.Attribute.Private;
+    mainSubTitle: Schema.Attribute.String;
+    mainTitle: Schema.Attribute.String;
+    Points: Schema.Attribute.RichText;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     subTitle: Schema.Attribute.String;
     title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRegistrationRegistration
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'registrations';
+  info: {
+    displayName: 'Registration';
+    pluralName: 'registrations';
+    singularName: 'registration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    btn_link: Schema.Attribute.Text;
+    btn_text: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::registration.registration'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    ratecard: Schema.Attribute.DynamicZone<['component.rate-cards']>;
+    subTitle: Schema.Attribute.String;
+    Title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -644,6 +688,7 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
     descriptions: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -660,7 +705,9 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'name'>;
+    slug: Schema.Attribute.UID<'Title'>;
+    subTitle: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       ['Silver Sponsor', 'Bronze Sponsor', 'Supporting Organization']
     >;
@@ -1185,6 +1232,7 @@ declare module '@strapi/strapi' {
       'api::content.content': ApiContentContent;
       'api::page.page': ApiPagePage;
       'api::program.program': ApiProgramProgram;
+      'api::registration.registration': ApiRegistrationRegistration;
       'api::speaker.speaker': ApiSpeakerSpeaker;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'plugin::content-releases.release': PluginContentReleasesRelease;

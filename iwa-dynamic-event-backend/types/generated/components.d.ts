@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentAdvisoryCommitee extends Struct.ComponentSchema {
+  collectionName: 'components_component_advisory_commitees';
+  info: {
+    displayName: 'AdvisoryCommitee';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    member_Details: Schema.Attribute.Component<'component.member', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentButton extends Struct.ComponentSchema {
   collectionName: 'components_component_buttons';
   info: {
@@ -23,6 +35,29 @@ export interface ComponentCards extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentCommittee extends Struct.ComponentSchema {
+  collectionName: 'components_component_committees';
+  info: {
+    displayName: 'committee';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentImageText extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_texts';
+  info: {
+    displayName: 'imageText';
+  };
+  attributes: {
+    Description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    position: Schema.Attribute.Enumeration<['left', 'right']>;
+  };
+}
+
 export interface ComponentImageTextBlock extends Struct.ComponentSchema {
   collectionName: 'components_component_image_text_blocks';
   info: {
@@ -38,6 +73,19 @@ export interface ComponentImageTextBlock extends Struct.ComponentSchema {
       >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentMember extends Struct.ComponentSchema {
+  collectionName: 'components_component_members';
+  info: {
+    displayName: 'member';
+  };
+  attributes: {
+    company_Details: Schema.Attribute.String;
+    country: Schema.Attribute.String;
+    designation: Schema.Attribute.String;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -68,6 +116,29 @@ export interface ComponentProgramDetails extends Struct.ComponentSchema {
         'Reception',
       ]
     >;
+  };
+}
+
+export interface ComponentRateCards extends Struct.ComponentSchema {
+  collectionName: 'components_component_rate_cards';
+  info: {
+    displayName: 'rateCards';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'component.rates', true>;
+    customdate: Schema.Attribute.Text;
+    Title: Schema.Attribute.Text;
+  };
+}
+
+export interface ComponentRates extends Struct.ComponentSchema {
+  collectionName: 'components_component_rates';
+  info: {
+    displayName: 'rates';
+  };
+  attributes: {
+    rate: Schema.Attribute.String;
+    typeOfMembership: Schema.Attribute.Text;
   };
 }
 
@@ -141,10 +212,16 @@ export interface ComponentWhyAttendCards extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'component.advisory-commitee': ComponentAdvisoryCommitee;
       'component.button': ComponentButton;
       'component.cards': ComponentCards;
+      'component.committee': ComponentCommittee;
+      'component.image-text': ComponentImageText;
       'component.image-text-block': ComponentImageTextBlock;
+      'component.member': ComponentMember;
       'component.program-details': ComponentProgramDetails;
+      'component.rate-cards': ComponentRateCards;
+      'component.rates': ComponentRates;
       'component.sessions': ComponentSessions;
       'component.speakers': ComponentSpeakers;
       'component.sponsor-image-widget': ComponentSponsorImageWidget;
