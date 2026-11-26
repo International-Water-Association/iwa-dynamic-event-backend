@@ -22,25 +22,18 @@ export default [
     },
   },
   {
-  name: 'strapi::cors',
-  config: {
-    enabled: true,
-    origin: [
-      'http://localhost:4200',
-      'http://localhost:4000',
-      'https://iwa-web-frontend-2b10ec218199.herokuapp.com',
-      'https://www.iwa-network.org',
-      'https://iwa-network.org',
-      'http://iwa-network.org',
-      'http://www.iwa-network.org',
-      "https://www.iwautilities.org",
-      'https://utility-summit-2924fc9f4c35.herokuapp.com'
-    ],
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    headers: ['Content-Type', 'Authorization', 'Accept', 'Origin'],
-    keepHeaderOnError: true
-  }
-},
+    name: 'strapi::cors',
+    config: {
+      origin: ['http://localhost:4200', 'http://localhost:4000',
+        'https://www.iwasanitation.org',
+        'https://iwa-web-frontend-2b10ec218199.herokuapp.com',
+        'https://universal-payment-partial-07de2241b8a8.herokuapp.com',
+        'https://www.iwa-network.org','https://iwa-network.org','http://iwa-network.org','http://www.iwa-network.org'], 
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    },
+  },
+ 
     'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
